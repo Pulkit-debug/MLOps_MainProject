@@ -1,0 +1,18 @@
+So we are a real estate company and we want profit. So what we will do is that we will create a model that will predict the prices of the houses based on some features like number of rooms, doors, material used etc 
+
+example: when a boss of some company see some house with some price let's say 5cr. and the model that we created is predicting the price of the house 10cr. So we know that our model is very good and it's giving the best price So the Boss will buy that house costs 5cr. and then later will that house in 10cr. or maybe more. So the company gets profit of around 5cr. because of our model
+
+The Whole and sole purpose of the model is to predict prices of the houses based on some features as discussed above.
+
+ 
+******************************** STEPS ******************************
+
+1. Finding the type of the model
+	- supervised
+	- regression task
+	- Batch Learning
+
+2. Selecting a  performace measure
+	- here we are choosing RMSE
+
+3. Checking for Assumptions(Assumptions must be very right because change in price could lend to loss for company) 
