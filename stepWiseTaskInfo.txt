@@ -15,5 +15,4 @@ The Whole and sole purpose of the model is to predict prices of the houses based
 2. Selecting a  performace measure
 	- here we are choosing RMSE
 
-3. Checking for Assumptions(Assumptions must be very right because change in price could lend to loss for company) 
-
+3. Checking for Assumptions(Assumptions must be very right because change in price could lend to loss for company)
