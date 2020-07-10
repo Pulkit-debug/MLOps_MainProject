@@ -12,7 +12,7 @@ import pandas as pd
 # In[2]:
 
 
-housing = pd.read_csv("houseData.csv")
+housing = pd.read_csv("/mlops/houseData.csv")
 
 
 # In[3]:
@@ -42,11 +42,6 @@ housing.describe()
 # std : standard deviation
 # here 25%, 50% and 75% means that the values that is shows are less than 25%, 50% and 75%
 
-
-# In[7]:
-
-
-get_ipython().run_line_magic('matplotlib', 'inline')
 
 
 # In[8]:
@@ -416,9 +411,6 @@ stringparse = str(predic)
 # ac = stringparse[0] + stringparse[1]
 f.write(stringparse)
 f.close()
-
-
-# In[ ]:
 
 
 
