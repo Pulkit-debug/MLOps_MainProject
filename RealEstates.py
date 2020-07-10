@@ -12,7 +12,7 @@ import pandas as pd
 # In[2]:
 
 
-housing = pd.read_csv("/mlops/houseData.csv")
+
 
 
 # In[3]:
