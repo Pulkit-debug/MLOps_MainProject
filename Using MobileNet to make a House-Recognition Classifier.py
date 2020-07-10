@@ -72,7 +72,7 @@ print(model.summary())
 
 # ### Loading our House-Recognition Dataset
 
-# In[5]:
+# In[4]:
 
 
 from keras.preprocessing.image import ImageDataGenerator
@@ -110,7 +110,7 @@ validation_generator = validation_datagen.flow_from_directory(
 # ### Training our Model
 # - Note we're using checkpointing and early stopping
 
-# In[6]:
+# In[5]:
 
 
 from keras.optimizers import RMSprop
@@ -157,7 +157,7 @@ history = model.fit_generator(
 # ### Loading our classifer
 # 
 
-# In[7]:
+# In[6]:
 
 
 from keras.models import load_model
@@ -167,7 +167,7 @@ classifier = load_model('houseRecog.h5')
 
 # ### Testing our classifer on some test images
 
-# In[11]:
+# In[7]:
 
 
 import os
@@ -182,6 +182,8 @@ house = {"[0]": "apartment",
 house_n = {"apartment": "apartment",
                        "mansion": "mansion"}
 
+getNames = []
+
 def draw_test(name, pred, im):
     newHouse = house[str(pred)]
     BLACK = [0,0,0]
@@ -195,11 +197,13 @@ def getRandomImage(path):
     random_directory = np.random.randint(0,len(folders))
     path_class = folders[random_directory]
     print("Class - " + house_n[str(path_class)])
+    getNames.append(house_n[str(path_class)])
     file_path = path + path_class
     file_names = [f for f in listdir(file_path) if isfile(join(file_path, f))]
     random_file_index = np.random.randint(0,len(file_names))
     image_name = file_names[random_file_index]
-    return cv2.imread(file_path+"/"+image_name)    
+    return cv2.imread(file_path+"/"+image_name)
+
 
 for i in range(0,10):
     input_im = getRandomImage("P:/MLOps_Projects/MLOps_MainProject/validation/")
@@ -212,12 +216,49 @@ for i in range(0,10):
     
     # Get Prediction
     res = np.argmax(classifier.predict(input_im, 1, verbose = 0), axis=1)
-    
     # Show image with predicted class
     draw_test("Prediction", res, input_original) 
+    
     cv2.waitKey(0)
 
 cv2.destroyAllWindows()
+
+print(getNames)
+
+
+# In[8]:
+
+
+arr = np.array(getNames)
+
+
+# In[9]:
+
+
+import pandas as pd
+
+
+# In[10]:
+
+
+
+arr
+list1 = arr.tolist()
+df = pd.DataFrame(list1)
+csv_data = df.to_csv(index=False)
+df.to_csv('filee.csv', index=False)
+
+
+# In[12]:
+
+
+import csv
+header = ['row1']
+with open('filee.csv', 'wt', newline ='') as file:
+    writer = csv.writer(file, delimiter=',')
+    writer.writerow(i for i in header)
+    for j in list1:
+        writer.writerow([j])
 
 
 # In[ ]:
