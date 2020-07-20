@@ -16,9 +16,7 @@ from keras.applications import MobileNet
 img_rows, img_cols = 224, 224 
 
 # Re-loads the MobileNet model without the top or FC layers
-MobileNet = MobileNet(weights = 'imagenet', 
-                 include_top = False, 
-                 input_shape = (img_rows, img_cols, 3))
+MobileNet = MobileNet(weights = 'imagenet', include_top = False, input_shape = (img_rows, img_cols, 3))
 
 # Here we freeze the last 4 layers 
 # Layers are set to trainable as True by default
