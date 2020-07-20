@@ -258,8 +258,6 @@ with open('filee.csv', 'wt', newline ='') as file:
     writer.writerow(i for i in header)
     for j in list1:
         writer.writerow([j])
-
-
 # In[ ]:
 
 
