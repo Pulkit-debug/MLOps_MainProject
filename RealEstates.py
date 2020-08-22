@@ -350,11 +350,7 @@ print_scores(rmse_scores)
 from joblib import dump, load
 dump(model, 'realEstate.joblib') 
 
-
 # ## Testing the model on test data
-
-# In[45]:
-
 
 X_test = strat_test_set.drop("MEDV", axis=1)
 Y_test = strat_test_set["MEDV"].copy()
@@ -364,17 +360,9 @@ final_mse = mean_squared_error(Y_test, final_predictions)
 final_rmse = np.sqrt(final_mse)
 print(final_predictions, list(Y_test))
 
-
-# In[46]:
-
-
 final_rmse
 # here we are getting our root mean squraerd error approx 3 which is very very good as compared to the data that we took
 # we took only 500 data so our model is more than good here.
-
-
-# In[47]:
-
 
 prepared_data[0]
 
@@ -395,16 +383,8 @@ features = np.array([[-5.43942006, 4.12628155, -1.6165014, -0.67288841, -1.42262
 predic = model.predict(features)
 #Here this is the price that we are getting for the features that we gave
 
-
-# In[72]:
-
-
 predic = predic.astype(int)
 print(predic)
-
-
-# In[75]:
-
 
 f  = open("prediction.txt", "w")
 stringparse = str(predic)
