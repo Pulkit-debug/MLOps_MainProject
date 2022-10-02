@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
-# Testing after a long time
+# Testing it after a long time
 # # Using MobileNet for our House Classifer
 # 
 # ### Loading the MobileNet Model
